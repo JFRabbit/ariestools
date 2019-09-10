@@ -1,0 +1,9 @@
+# Ignore
+.idea/
+__pycache__/
+*.log
+/venv/
+/build/
+/dist/
+*.spec
+/ariestools.egg-info/
