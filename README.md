@@ -1,7 +1,7 @@
 # ariestools
 
 ## Install
-pip install ariestools==1.0.1
+pip install ariestools==1.0.3
 
 ## Limitation
 support python3.7+
@@ -40,10 +40,4 @@ import os
 from ariestools import replace_sys_path, load_yaml
 
 _yaml = load_yaml(os.path.realpath('') + replace_sys_path("/.xxx/xxx.yaml"))
-```
-* pendulum parse time
-```python
-from ariestools import parse
-parse("2009-08-01T00:00:00.000").format('YYYY-MM-DD HH:mm:ss.SSS')
-
 ```

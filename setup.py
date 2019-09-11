@@ -18,13 +18,11 @@ setuptools.setup(
     author="jasonzhang",
     author_email="864040015@qq.com",
     description="Common Tools for python lib",
-    long_description=long_description,
     url="",
     install_requires=[
         'requests>=2.22.0',
         'urllib3>=1.25.3',
-        'PyYAML>=5.1',
-        'pendulum>=2.0.5'
+        'PyYAML>=5.1'
     ],
     packages=setuptools.find_packages(exclude=("test")),
     classifiers=[
@@ -40,8 +38,7 @@ setuptools.setup(
             "ariestools/json_path_util.py",
             "ariestools/json_util.py",
             "ariestools/path_util.py",
-            "ariestools/time_util.py",
-            "ariestools/yaml_util.py",
+            "ariestools/yaml_util.py"
         ]
     },
 )
