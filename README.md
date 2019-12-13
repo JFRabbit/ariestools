@@ -1,7 +1,7 @@
 # ariestools
 
 ## Install
-pip install ariestools==1.0.3
+pip install ariestools==1.0.4
 
 ## Limitation
 support python3.7+
@@ -40,4 +40,22 @@ import os
 from ariestools import replace_sys_path, load_yaml
 
 _yaml = load_yaml(os.path.realpath('') + replace_sys_path("/.xxx/xxx.yaml"))
+```
+
+* parse time
+```python
+t_time_str = '2019-08-01 00:00:00.000'
+t_dt = parse(t_time_str) # 2019-08-01T00:00:00+08:00
+
+print(get_local_time(t_dt)) # 2019-08-01 00:00:00.000
+print(get_cloud_time(t_dt)) # 1564588800000000000
+
+t_time_str2 = '2019-08-01 00:00:05.000'
+t_dt2 = parse(t_time_str2)
+
+print(get_dt_duration_seconds(t_dt2, t_dt)) # 5
+
+print(t_dt2 > t_dt) # True
+
+print(now()) # 1576224515111
 ```
