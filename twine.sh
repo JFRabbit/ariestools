@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-twine upload dist/*
+./venv/bin/twine upload dist/*

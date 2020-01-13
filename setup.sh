@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python setup.py sdist bdist_wheel
+./venv/bin/python setup.py sdist bdist_wheel

@@ -4,5 +4,6 @@ from .json_util import load_json
 from .path_util import replace_sys_path, get_path_by_relative
 from .yaml_util import load_yaml
 from .time_util import *
+from .object import Object
 
-__version__ = "1.0.5"
+__version__ = "1.0.6"
