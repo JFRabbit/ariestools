@@ -18,16 +18,18 @@ _res_json = graphql_query(query_url, payload)
 ```python
 from ariestools import JsonPath
 
-_json_path = JsonPath()
-
 _json_dict = {'k': 'v'}
-print(_json_path.path("$.k", _json_dict))
+_jp1 = JsonPath(_json_dict)
+print(_jp1.path("$.k"))
 
 _json_list = [{'k': 'v'}]
-print(_json_path.path("$.[0].k", _json_list))
+_jp2 = JsonPath(_json_list)
+print(_jp2.path("$.[0].k"))
 
 _json_complex = {'k': [{'k': 'v'}]}
-print(_json_path.path("$.k.[0].k", _json_complex))
+_jp3 = JsonPath(_json_complex)
+
+print(_jp3.path("$.k.[0].k"))
 ```
 * load json file
 ```python

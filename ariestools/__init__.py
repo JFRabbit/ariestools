@@ -6,4 +6,4 @@ from .yaml_util import load_yaml
 from .time_util import *
 from .object import Object
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
