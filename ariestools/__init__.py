@@ -7,4 +7,4 @@ from .time_util import *
 from .object import Object
 from .arg_util import Arg, Args
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
