@@ -5,5 +5,6 @@ from .path_util import replace_sys_path, get_path_by_relative
 from .yaml_util import load_yaml
 from .time_util import *
 from .object import Object
+from .arg_util import Arg, Args
 
-__version__ = "1.0.8"
+__version__ = "1.0.9"
