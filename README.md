@@ -1,7 +1,7 @@
 # ariestools
 
 ## Install
-pip install ariestools==1.0.5
+pip install ariestools==1.0.8
 
 ## Limitation
 support python3.7+
