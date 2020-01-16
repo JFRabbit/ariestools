@@ -1,10 +1,8 @@
 import argparse
 from typing import List
 
-from object import Object
 
-
-class Arg(Object):
+class Arg:
 
     def __init__(self, name, flags, help, default=None):
         self.name = name
@@ -13,7 +11,7 @@ class Arg(Object):
         self.default = default
 
 
-class Args(Object):
+class Args:
     def __init__(self, args: List[Arg], name, desc=''):
         self.args = args
         self.name = name
