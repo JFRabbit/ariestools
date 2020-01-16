@@ -12,11 +12,16 @@ class JsonPath(object):
     __SQUARE_L = "["
     __SQUARE_R = "]"
 
-    def __init__(self, json, separator=Separator.DOT):
+    def __init__(self, json=None, separator=Separator.DOT):
         self.json = json
         self.separator = separator.value
 
-    def path(self, path: str):
+    def path(self, path: str, json=None):
+        if json is None:
+            json = self.json
+
+        if json is None:
+            raise SyntaxError("not set json param")
 
         if not path.startswith(self.__ROOT):
             raise SyntaxError("path: %s must start with '$'" % path)
@@ -30,20 +35,20 @@ class JsonPath(object):
 
             if self.__SQUARE_L in i:
                 try:
-                    self.json = self.__get(self.json, i.split(self.__SQUARE_L)[0])[
+                    json = self.__get(json, i.split(self.__SQUARE_L)[0])[
                         int(i[i.index(self.__SQUARE_L) + 1: i.index(self.__SQUARE_R)])]
                     continue
                 except IndexError:
                     raise IndexError("list: %s index out of range, length: %d, index: %d" % (
-                        self.__get(self.json, i.split(self.__SQUARE_L)[0]),
+                        self.__get(json, i.split(self.__SQUARE_L)[0]),
                         i.split(self.__SQUARE_L)[0].__len__(),
                         int(i[i.index(self.__SQUARE_L) + 1: i.index(self.__SQUARE_R)])))
                 except Exception as e:
                     raise Exception(e)
 
-            self.json = self.__get(self.json, i)
+            json = self.__get(json, i)
 
-        return self.json
+        return json
 
     @staticmethod
     def __get(json, key: str):
