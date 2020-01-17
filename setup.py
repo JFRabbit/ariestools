@@ -23,7 +23,6 @@ setuptools.setup(
         'requests>=2.22.0',
         'urllib3>=1.25.7',
         'PyYAML>=5.3',
-        'pendulum>=2.0.5'
     ],
     packages=setuptools.find_packages(exclude=("test")),
     classifiers=[
@@ -40,7 +39,6 @@ setuptools.setup(
             "ariestools/json_util.py",
             "ariestools/path_util.py",
             "ariestools/yaml_util.py",
-            "ariestools/time_util.py",
             "ariestools/object.py",
             "ariestools/arg_util.py"
         ]
