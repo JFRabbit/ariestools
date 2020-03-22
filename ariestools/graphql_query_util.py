@@ -8,7 +8,6 @@ def graphql_query(query_url: str, payload: dict):
         headers={'content-type': 'application/json'}
     )
 
-    if res.status_code != 200:
-        raise Exception(res.text)
-    else:
-        return res.json()
+    res.raise_for_status()
+
+    return res.json()

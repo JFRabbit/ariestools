@@ -20,9 +20,11 @@ setuptools.setup(
     description="Common Tools for python lib",
     url="",
     install_requires=[
-        'requests>=2.22.0',
+        'requests>=2.23.0',
         'urllib3>=1.25.7',
-        'PyYAML>=5.3',
+        'PyYAML>=5.3.1',
+        'pendulum>=2.1.0',
+        'namedtupled>=0.3.3'
     ],
     packages=setuptools.find_packages(exclude=("test")),
     classifiers=[
@@ -40,7 +42,8 @@ setuptools.setup(
             "ariestools/path_util.py",
             "ariestools/yaml_util.py",
             "ariestools/object.py",
-            "ariestools/arg_util.py"
+            "ariestools/arg_util.py",
+            "ariestools/time_util.py"
         ]
     },
 )
