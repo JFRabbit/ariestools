@@ -6,5 +6,6 @@ from .yaml_util import load_yaml
 from .time_util import *
 from .object import Object
 from .arg_util import Arg, Args
+from .random_util import *
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
