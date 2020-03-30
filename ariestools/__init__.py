@@ -8,4 +8,4 @@ from .object import Object
 from .arg_util import Arg, Args
 from .random_util import *
 
-__version__ = "1.3.0"
+__version__ = "1.3.1"

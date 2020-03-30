@@ -1,3 +1,4 @@
+import enum
 import random
 import uuid
 from decimal import Decimal
@@ -51,3 +52,11 @@ def float_scale(float_num, precision='0.00', scale=False):
 
 def random_bool():
     return random_int(0, 1)
+
+
+def random_list(l: list):
+    return l[random_int(0, l.__len__() - 1)]
+
+
+def random_enum(e: enum.EnumMeta):
+    return random_list(list(e.__iter__()))
