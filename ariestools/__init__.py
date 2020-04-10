@@ -7,5 +7,6 @@ from .time_util import *
 from .object import Object
 from .arg_util import Arg, Args
 from .random_util import *
+from .file_util import write_file
 
-__version__ = "1.3.1"
+__version__ = "1.4.0"

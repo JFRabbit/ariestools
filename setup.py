@@ -44,7 +44,8 @@ setuptools.setup(
             "ariestools/object.py",
             "ariestools/arg_util.py",
             "ariestools/time_util.py",
-            "ariestools/random_util.py"
+            "ariestools/random_util.py",
+            "ariestools/file_util.py"
         ]
     },
 )
