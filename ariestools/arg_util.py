@@ -3,7 +3,9 @@ from typing import List
 
 
 class Arg:
-
+    """
+    参数
+    """
     def __init__(self, name, flags, help, default=None, required=False):
         self.name = name
         self.flags = flags
@@ -13,12 +15,19 @@ class Arg:
 
 
 class Args:
+    """
+    参数集
+    """
     def __init__(self, args: List[Arg], name, desc=''):
         self.args = args
         self.name = name
         self.desc = desc
 
     def parse(self):
+        """
+        解析控制台输入的参数
+        :return:
+        """
         parser = argparse.ArgumentParser(prog=self.name, description=self.desc)
 
         for arg in self.args:

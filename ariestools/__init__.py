@@ -9,4 +9,4 @@ from .arg_util import Arg, Args
 from .random_util import *
 from .file_util import write_file
 
-__version__ = "1.4.1"
+__version__ = "1.4.2"

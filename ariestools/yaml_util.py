@@ -12,5 +12,11 @@ def load_yaml(path):
 
 
 def write_yaml(data, path):
+    """
+    将对象写yaml
+    :param data:
+    :param path:
+    :return:
+    """
     with open(path, 'w', encoding='utf-8') as f:
         yaml.dump(data, f, allow_unicode=True)

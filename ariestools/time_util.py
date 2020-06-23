@@ -42,6 +42,10 @@ def get_dt_duration_seconds(dt1, dt2):
 
 
 def now():
+    """
+    当前时间的时间戳
+    :return:
+    """
     return int(pendulum.now(tz='Asia/Shanghai').timestamp() * 1000)
 
 

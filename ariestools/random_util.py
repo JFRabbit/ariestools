@@ -51,12 +51,26 @@ def float_scale(float_num, precision='0.00', scale=False):
 
 
 def random_bool():
+    """
+    随机布尔
+    :return:
+    """
     return random_int(0, 1)
 
 
 def random_list(l: list):
+    """
+    随机从list中取一个值
+    :param l:
+    :return:
+    """
     return l[random_int(0, l.__len__() - 1)]
 
 
 def random_enum(e: enum.EnumMeta):
+    """
+    随机从枚举中取一个值
+    :param e:
+    :return:
+    """
     return random_list(list(e.__iter__()))

@@ -21,4 +21,4 @@ def write_file(file_path, content, mode='w', encoding='utf-8'):
 
 
 if __name__ == '__main__':
-    write('./testData/write', '1测试1')
+    write_file('./testData/write', '1测试1')

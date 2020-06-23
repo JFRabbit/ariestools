@@ -2,12 +2,18 @@ import enum
 
 
 class Separator(enum.Enum):
+    """
+    分隔符
+    """
     DOT = "."
     STAR = "*"
     L_STR = "|"
 
 
 class JsonPath(object):
+    """
+    json路径解析
+    """
     __ROOT = "$"
     __SQUARE_L = "["
     __SQUARE_R = "]"
@@ -17,6 +23,12 @@ class JsonPath(object):
         self.separator = separator.value
 
     def path(self, path: str, json=None):
+        """
+        解析路径
+        :param path: 路径表达式
+        :param json: json字典
+        :return:
+        """
         if json is None:
             json = self.json
 
