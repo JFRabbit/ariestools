@@ -8,13 +8,14 @@ support python3.7+
 
 ## Function
 
-* graphql query
+> graphql query
 ```python
 from ariestools import graphql_query
 
 _res_json = graphql_query(query_url, payload)
 ```
-* json path
+
+> json path
 ```python
 from ariestools import JsonPath
 
@@ -31,12 +32,44 @@ _jp3 = JsonPath(_json_complex)
 
 print(_jp3.path("$.k.[0].k"))
 ```
-* load json file
+
+> load json file
 ```python
 from ariestools import load_json
 _json = load_json(json_file_path)
 ```
-* get relative path & load yaml
+
+> format obj to json str
+```python
+from ariestools.json_util import obj2jsonstr
+
+
+class Foo:
+    def __init__(self):
+        self.a = 1
+        self.b = 2
+        self.bar = Bar()
+
+class Bar:
+    def __init__(self):
+        self.x = 1
+        self.y = 2
+
+
+print(obj2jsonstr(Foo()))
+```
+``` json
+{
+    "a": 1,
+    "b": 2,
+    "bar": {
+        "x": 1,
+        "y": 2
+    }
+}
+```
+
+> get relative path & load yaml
 ```python
 import os
 from ariestools import replace_sys_path, load_yaml
@@ -44,7 +77,7 @@ from ariestools import replace_sys_path, load_yaml
 _yaml = load_yaml(os.path.realpath('') + replace_sys_path("/.xxx/xxx.yaml"))
 ```
 
-* parse time
+> parse time
 ```python
 t_time_str = '2019-08-01 00:00:00.000'
 t_dt = parse(t_time_str) # 2019-08-01T00:00:00+08:00
