@@ -11,7 +11,7 @@ def load_json(json_file_path):
         return json.load(f, encoding='utf-8')
 
 
-def obj2jsonstr(obj: object, default=lambda o: o.__dict__, sort_keys=True, indent=4, ensure_ascii=False):
+def obj2jsonstr(obj: object, default=lambda o: o.__dict__, sort_keys=True, indent=4, ensure_ascii=False) -> str:
     """
     对象转json str
     :param obj:

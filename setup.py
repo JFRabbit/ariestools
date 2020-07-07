@@ -18,6 +18,8 @@ setuptools.setup(
     author="jasonzhang",
     author_email="864040015@qq.com",
     description="Common Tools for python lib",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url="",
     install_requires=[
         'requests>=2.23.0',

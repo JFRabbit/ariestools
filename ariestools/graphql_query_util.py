@@ -1,7 +1,7 @@
 import requests
 
 
-def graphql_query(query_url: str, payload: dict):
+def graphql_query(query_url: str, payload: dict) -> dict:
     """
     Graphql 查询
     :param query_url:

@@ -1,7 +1,7 @@
 import yaml
 
 
-def load_yaml(path):
+def load_yaml(path) -> dict:
     """
     读取一个yaml文件
     :param path: 文件路径

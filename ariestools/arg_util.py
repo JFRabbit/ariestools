@@ -23,7 +23,7 @@ class Args:
         self.name = name
         self.desc = desc
 
-    def parse(self):
+    def parse(self) -> argparse.Namespace:
         """
         解析控制台输入的参数
         :return:
