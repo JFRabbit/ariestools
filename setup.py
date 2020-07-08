@@ -26,7 +26,8 @@ setuptools.setup(
         'urllib3>=1.25.7',
         'PyYAML>=5.3.1',
         'pendulum>=2.1.0',
-        'namedtupled>=0.3.3'
+        'namedtupled>=0.3.3',
+        'hues>=0.2.2'
     ],
     packages=setuptools.find_packages(exclude=("test")),
     classifiers=[
@@ -47,7 +48,8 @@ setuptools.setup(
             "ariestools/arg_util.py",
             "ariestools/time_util.py",
             "ariestools/random_util.py",
-            "ariestools/file_util.py"
+            "ariestools/file_util.py",
+            "ariestools/color_output.py"
         ]
     },
 )

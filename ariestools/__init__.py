@@ -8,5 +8,6 @@ from .object import Object
 from .arg_util import Arg, Args
 from .random_util import *
 from .file_util import write_file
+from .color_output import black, red, green, yellow, blue, magenta, cyan
 
-__version__ = "1.4.3"
+__version__ = "1.5.0"
