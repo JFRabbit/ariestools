@@ -7,3 +7,4 @@ PyYAML == 5.3.1
 pendulum == 2.1.0
 namedtupled==0.3.3
 hues == 0.2.2
+tenacity == 6.2.0

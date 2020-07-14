@@ -9,5 +9,6 @@ from .arg_util import Arg, Args
 from .random_util import *
 from .file_util import write_file
 from .color_output import black, red, green, yellow, blue, magenta, cyan
+from tenacity import *
 
-__version__ = "1.5.0"
+__version__ = "1.6.0"

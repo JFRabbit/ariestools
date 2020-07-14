@@ -16,7 +16,7 @@ setuptools.setup(
     name="ariestools",
     version=version,
     author="jasonzhang",
-    author_email="864040015@qq.com",
+    author_email="qwertjkl9090@163.com",
     description="Common Tools for python lib",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -27,7 +27,8 @@ setuptools.setup(
         'PyYAML>=5.3.1',
         'pendulum>=2.1.0',
         'namedtupled>=0.3.3',
-        'hues>=0.2.2'
+        'hues>=0.2.2',
+        'tenacity>=6.2.0'
     ],
     packages=setuptools.find_packages(exclude=("test")),
     classifiers=[
