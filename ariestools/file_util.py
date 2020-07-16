@@ -1,7 +1,5 @@
 import os
 
-from beauty_print import bp_list
-
 
 def write_file(file_path, content, mode='w', encoding='utf-8'):
     """
@@ -47,4 +45,5 @@ def get_all_file_ab_path(path):
 if __name__ == '__main__':
     write_file('./testData/write', '1测试1')
     files_ab_path = get_all_file_ab_path("../ariestools")
-    bp_list(files_ab_path)
+    for i in files_ab_path:
+        print(i)
