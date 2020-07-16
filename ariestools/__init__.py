@@ -12,4 +12,4 @@ from .color_output import black, red, green, yellow, blue, magenta, cyan
 from tenacity import *
 from .beauty_print import *
 
-__version__ = "1.7.2"
+__version__ = "1.7.3"
