@@ -50,7 +50,8 @@ setuptools.setup(
             "ariestools/time_util.py",
             "ariestools/random_util.py",
             "ariestools/file_util.py",
-            "ariestools/color_output.py"
+            "ariestools/color_output.py",
+            "ariestools/beauty_print.py"
         ]
     },
 )

@@ -7,8 +7,9 @@ from .time_util import *
 from .object import Object
 from .arg_util import Arg, Args
 from .random_util import *
-from .file_util import write_file
+from .file_util import write_file, get_all_file_ab_path
 from .color_output import black, red, green, yellow, blue, magenta, cyan
 from tenacity import *
+from beauty_print import *
 
-__version__ = "1.6.0"
+__version__ = "1.7.0"
