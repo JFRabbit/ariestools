@@ -8,7 +8,7 @@ from .object import Object
 from .arg_util import Arg, Args
 from .random_util import *
 from .file_util import write_file, get_all_file_ab_path
-from .color_output import black, red, green, yellow, blue, magenta, cyan
+from .color_output import black, red, green, yellow, blue, magenta, cyan, white
 from .beauty_print import *
 
-__version__ = "1.7.4"
+__version__ = "1.7.5"
