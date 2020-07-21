@@ -29,29 +29,20 @@ def get_all_file_ab_path(path, regex: str = None):
     :param regex 过滤正则
     :return: [文件绝对路径, 文件名]
     """
-    files_ab_path = []
-    if os.path.isdir(path):
-        all_file = os.listdir(path)
-        for f in all_file:
-            files_ab_path.extend(get_all_file_ab_path(f, regex))
-
-    else:
-        if regex is not None:
-            if re.search(regex, path) is None:
-                return []
-
-        if os.path.isabs(path):
-            files_ab_path.append([path, os.path.basename(path)])
-        else:
-            files_ab_path.append([os.path.abspath(path), os.path.basename(path)])
-
-    return files_ab_path
+    file_list = []
+    for home, dirs, files in os.walk(path):
+        for f in files:
+            if regex is not None:
+                if re.search(regex, f) is None:
+                    continue
+            file_list.append(os.path.join(home, f))
+    return file_list
 
 
 if __name__ == '__main__':
     # write_file('./testData/write', '1测试1')
     files_ab_path = get_all_file_ab_path(
-        "../ariestools",
+        "../build",
         'yaml_util'
     )
     for i in files_ab_path:
