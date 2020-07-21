@@ -1,4 +1,5 @@
 import os
+import re
 from typing import List
 
 
@@ -21,11 +22,11 @@ def write_file(file_path, content, mode='w', encoding='utf-8'):
         fp.write(content)
 
 
-def get_all_file_ab_path(path, ex: List[str] = None):
+def get_all_file_ab_path(path, regex: str = None):
     """
     获取路径下所有文件的绝对路径
-    :param ex: 过滤的文件名
-    :param path:
+    :param path: 文件或文件夹路径
+    :param regex 过滤正则
     :return: [文件绝对路径, 文件名]
     """
     files_ab_path = []
@@ -33,13 +34,13 @@ def get_all_file_ab_path(path, ex: List[str] = None):
         os.chdir(path)
         all_file = os.listdir()
         for f in all_file:
-            files_ab_path.extend(get_all_file_ab_path(f, ex))
+            files_ab_path.extend(get_all_file_ab_path(f, regex))
 
     else:
-
-        if ex is not None and len(ex) != 0:
-            if os.path.basename(path) in ex:
+        if regex is not None:
+            if re.search(regex, path) is None:
                 return []
+
         if os.path.isabs(path):
             files_ab_path.append([path, os.path.basename(path)])
         else:
@@ -49,10 +50,10 @@ def get_all_file_ab_path(path, ex: List[str] = None):
 
 
 if __name__ == '__main__':
-    write_file('./testData/write', '1测试1')
+    # write_file('./testData/write', '1测试1')
     files_ab_path = get_all_file_ab_path(
         "../ariestools",
-        ["yaml_util.py", "json_path_util.py"]
+        'yaml_util'
     )
     for i in files_ab_path:
         print(i)
