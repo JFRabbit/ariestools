@@ -31,8 +31,7 @@ def get_all_file_ab_path(path, regex: str = None):
     """
     files_ab_path = []
     if os.path.isdir(path):
-        os.chdir(path)
-        all_file = os.listdir()
+        all_file = os.listdir(path)
         for f in all_file:
             files_ab_path.extend(get_all_file_ab_path(f, regex))
 
