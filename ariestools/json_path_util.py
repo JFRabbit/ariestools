@@ -32,9 +32,6 @@ class JsonPath(object):
         if json is None:
             json = self.json
 
-        if json is None:
-            raise SyntaxError("not set json param")
-
         if not path.startswith(self.__ROOT):
             raise SyntaxError("path: %s must start with '$'" % path)
 
