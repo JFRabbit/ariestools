@@ -18,9 +18,10 @@ class JsonPath(object):
     __SQUARE_L = "["
     __SQUARE_R = "]"
 
-    def __init__(self, json=None, separator=Separator.DOT):
+    def __init__(self, json=None, separator=Separator.DOT, not_key_raise=True):
         self.json = json
         self.separator = separator.value
+        self.not_key_raise = not_key_raise
 
     def path(self, path: str, json=None):
         """
@@ -59,11 +60,13 @@ class JsonPath(object):
 
         return json
 
-    @staticmethod
-    def __get(json, key: str):
+    def __get(self, json, key: str):
         if isinstance(json, dict):
             if key not in json.keys():
-                raise Exception("json: %s have not key: %s" % (json, key))
+                if self.not_key_raise:
+                    raise Exception("json: %s have not key: %s" % (json, key))
+                else:
+                    return None
             return json.get(key)
 
         if isinstance(json, list):
@@ -75,13 +78,20 @@ class JsonPath(object):
 if __name__ == '__main__':
     _json_dict = {'k': 'v'}
     _jp1 = JsonPath(_json_dict)
-    print(_jp1.path("$.k"))
+    assert _jp1.path("$.k") == 'v'
 
     _json_list = [{'k': 'v'}]
     _jp2 = JsonPath(_json_list)
-    print(_jp2.path("$.[0].k"))
+    assert _jp2.path("$.[0].k") == 'v'
 
     _json_complex = {'k': [{'k': 'v'}]}
     _jp3 = JsonPath(_json_complex)
 
-    print(_jp3.path("$.k.[0].k"))
+    assert _jp3.path("$.k.[0].k") == 'v'
+
+    _jp4 = JsonPath(_json_dict)
+    assert _jp4.path("$.[0].k", [{'k': 'v'}]) == 'v'
+
+    _jp5 = JsonPath(_json_dict, not_key_raise=False)
+    assert _jp5.path('$.m') == None
+
