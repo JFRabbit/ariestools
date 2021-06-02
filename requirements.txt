@@ -2,7 +2,7 @@ PyInstaller == 3.6
 twine == 3.1.1
 wheel == 0.34.2
 requests == 2.23.0
-urllib3 == 1.25.7
+urllib3 == 1.26.5
 PyYAML == 5.3.1
 pendulum == 2.1.0
 namedtupled==0.3.3
