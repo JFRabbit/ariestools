@@ -64,7 +64,7 @@ class JsonPath(object):
         if isinstance(json, dict):
             if key not in json.keys():
                 if self.not_key_raise:
-                    raise Exception("json: %s have not key: %s" % (json, key))
+                    raise Exception("json: %s have not key: [%s]" % (json, key))
                 else:
                     return None
             return json.get(key)
@@ -72,7 +72,7 @@ class JsonPath(object):
         if isinstance(json, list):
             return json
 
-        raise Exception("Can't find key: %s in primary value: %s" % (key, json))
+        raise Exception("Can't find key: %s in primary value: [%s]" % (key, json))
 
 
 if __name__ == '__main__':
