@@ -22,13 +22,13 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="",
     install_requires=[
-        'requests>=2.23.0',
-        'urllib3>=1.25.7',
-        'PyYAML>=5.3.1',
-        'pendulum>=2.1.0',
-        'namedtupled>=0.3.3',
-        'hues>=0.2.2',
-        'tenacity>=6.2.0'
+        'requests==2.31.0',
+        'urllib3==2.1.0',
+        'PyYAML==6.0.1',
+        'pendulum==2.1.2',
+        'namedtupled==0.3.3',
+        'hues==0.2.2',
+        'tenacity==8.2.3'
     ],
     packages=setuptools.find_packages(exclude=("test")),
     classifiers=[

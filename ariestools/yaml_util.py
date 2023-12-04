@@ -8,7 +8,7 @@ def load_yaml(path) -> dict:
     :return:
     """
     with open(path, encoding='utf-8') as f:
-        return yaml.load(f, Loader=yaml.FullLoader)
+        return yaml.safe_load(f)
 
 
 def write_yaml(data, path):
@@ -19,4 +19,4 @@ def write_yaml(data, path):
     :return:
     """
     with open(path, 'w', encoding='utf-8') as f:
-        yaml.dump(data, f, allow_unicode=True)
+        yaml.safe_dump(data, f, allow_unicode=True)

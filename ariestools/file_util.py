@@ -1,6 +1,5 @@
 import os
 import re
-from typing import List
 
 
 def write_file(file_path, content, mode='w', encoding='utf-8'):

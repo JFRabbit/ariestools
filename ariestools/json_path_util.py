@@ -94,4 +94,3 @@ if __name__ == '__main__':
 
     _jp5 = JsonPath(_json_dict, not_key_raise=False)
     assert _jp5.path('$.m') == None
-

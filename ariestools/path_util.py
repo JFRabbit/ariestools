@@ -1,4 +1,5 @@
-import platform, os
+import platform
+import os
 
 
 def replace_sys_path(path: str) -> str:
