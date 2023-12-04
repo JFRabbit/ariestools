@@ -27,7 +27,7 @@ pytzdata==2020.1
 PyYAML==6.0.1
 readme-renderer==37.3
 requests==2.31.0
-requests-toolbelt==0.10.1
+requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.7.0
 six==1.16.0
